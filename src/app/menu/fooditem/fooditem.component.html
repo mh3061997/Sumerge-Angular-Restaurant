@@ -1,0 +1,20 @@
+
+
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img [src]="item.img" class="card-img" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">{{item.name}}</h5>
+                  <p class="card-text"><small class="text-muted">{{item.weight}}</small></p>
+                  <p class="card-text">{{item.price}} LE</p>
+                  <div class="col-sm-12 justify-content-center">
+                      <button class="btn btn-primary col-sm-5 button" (click)="OnAddItem()">+</button>
+                      <span class="col-sm-2">{{quantity}}</span>
+                      <button class="btn btn-primary col-sm-5 button" (click)="OnRemoveItem()">-</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+         

@@ -1,0 +1,43 @@
+<div class="row justify-content-center" *ngIf="!loggedin">
+    <div class="col-md-6  p-3">
+        <form (ngSubmit)="OnSubmit(loginform)" #loginform="ngForm" class="p-5 mt-5 border border-info rounded">
+            <label>Username</label>
+            <input
+             type="text"
+              class="form-control" 
+              name="username"
+            ngModel
+            required
+            minlength="5"
+            #username="ngModel">
+               <span
+               class="form-text text-muted" 
+               *ngIf="username.touched && username.invalid">Please enter a username at least 5 characters long!<br></span>
+
+        
+            <label>Password</label>
+            <input type="password"
+             class="form-control"
+              name="password"
+               ngModel
+               required
+               #pw="ngModel"
+               minlength="8"
+               >
+               <span
+               class="form-text text-muted" 
+               *ngIf="pw.touched && pw.invalid">Please enter a password at least 8 characters long!<br></span>
+
+            <div class="form-group text-center">
+                <button 
+                type="submit" 
+                class="btn btn-primary mt-3"
+                [disabled]="!loginform.valid"
+                >Login</button>
+        
+            </div>
+        </form>
+    </div>
+</div>
+
+<router-outlet></router-outlet>
